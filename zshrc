@@ -6,6 +6,8 @@ zplug "lib/git",             from:oh-my-zsh
 zplug "lib/history",         from:oh-my-zsh
 zplug "lib/key-bindings",    from:oh-my-zsh
 zplug "plugins/docker",      from:oh-my-zsh
+zplug "plugins/grunt",       from:oh-my-zsh, nice:10
+zplug "plugins/npm",         from:oh-my-zsh, nice:10
 
 # theme
 zplug "dracula/zsh", use:dracula.zsh-theme
@@ -17,7 +19,7 @@ zplug "andrewferrier/fzf-z"
 zplug "felixr/docker-zsh-completion"
 zplug "psprint/history-search-multi-word"
 
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 # check for missing plugins and prompt to intall
 if ! zplug check --verbose; then
@@ -35,7 +37,7 @@ PATH=/usr/local/bin:$PATH
 alias git="hub"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias gs="git status --short"
-alias gd="git diff --color | diff-so-fancy | less --tabs=4 -RFX"
+alias gd="git diff --color | diff-so-fancy | less --tabs=2 -RFX"
 alias zshconfig="subl ~/.zshrc"
 
 # rupa/z
