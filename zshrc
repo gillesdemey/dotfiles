@@ -2,6 +2,7 @@ source ~/.zplug/init.zsh
 
 # load the good parts from oh-my-zsh
 zplug "lib/completion",      from:oh-my-zsh
+zplug "lib/git",             from:oh-my-zsh
 zplug "lib/history",         from:oh-my-zsh
 zplug "lib/key-bindings",    from:oh-my-zsh
 zplug "plugins/docker",      from:oh-my-zsh
@@ -27,6 +28,8 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+PATH=/usr/local/bin:$PATH
 
 # aliases
 alias git="hub"
