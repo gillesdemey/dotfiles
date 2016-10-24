@@ -10,7 +10,8 @@ zplug "plugins/grunt",       from:oh-my-zsh, nice:10
 zplug "plugins/npm",         from:oh-my-zsh, nice:10
 
 # theme
-zplug "dracula/zsh", use:dracula.zsh-theme
+zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", nice:14
+zplug "dracula/zsh", use:"dracula.zsh-theme", nice:15
 
 # plugins
 zplug "tcnksm/docker-alias", use:zshrc
