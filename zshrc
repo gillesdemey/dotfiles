@@ -10,8 +10,7 @@ zplug "plugins/grunt",       from:oh-my-zsh, nice:10
 zplug "plugins/npm",         from:oh-my-zsh, nice:10
 
 # theme
-zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", nice:14
-zplug "dracula/zsh", use:"dracula.zsh-theme", nice:15
+zplug "sindresorhus/pure", as:theme, use:"*.zsh"
 
 # plugins
 zplug "tcnksm/docker-alias", use:zshrc
@@ -20,7 +19,7 @@ zplug "andrewferrier/fzf-z"
 zplug "felixr/docker-zsh-completion"
 zplug "psprint/history-search-multi-word"
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+# zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 # check for missing plugins and prompt to intall
 if ! zplug check --verbose; then
@@ -30,8 +29,6 @@ if ! zplug check --verbose; then
   fi
 fi
 
-zplug load
-
 PATH=/usr/local/bin:$PATH
 
 # aliases
@@ -40,6 +37,9 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias gs="git status --short"
 alias gd="git diff --color | diff-so-fancy | less --tabs=2 -RFX"
 alias zshconfig="subl ~/.zshrc"
+
+# editor
+export EDITOR=vim
 
 # rupa/z
 . `brew --prefix`/etc/profile.d/z.sh
@@ -53,3 +53,5 @@ eval "$(direnv hook zsh)"
 
 # curl — but through a TOR SOCKS proxy
 turl(){ curl --socks5-hostname localhost:9050 $@ ; }
+
+zplug load
