@@ -37,8 +37,10 @@ module.exports = {
   plugins: [
     'hyperterm-snazzy',
     'hyperlinks',
+    'hyperterm-mactabs',
     'hypercwd',
-    'hyperterm-mactabs'
+    'hyper-simple-highlight-active-session',
+    'hyper-statusline'
   ],
   localPlugins: []
 };
