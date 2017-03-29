@@ -10,8 +10,7 @@ zplug "plugins/grunt",       from:oh-my-zsh, nice:10
 zplug "plugins/npm",         from:oh-my-zsh, nice:10
 
 # theme
-zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", nice:14
-zplug "dracula/zsh", use:"dracula.zsh-theme", nice:15
+zplug "sindresorhus/pure", as:theme, use:"*.zsh"
 
 # plugins
 zplug "tcnksm/docker-alias", use:zshrc
@@ -20,7 +19,7 @@ zplug "andrewferrier/fzf-z"
 zplug "felixr/docker-zsh-completion"
 zplug "psprint/history-search-multi-word"
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+# zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 # check for missing plugins and prompt to intall
 if ! zplug check --verbose; then
@@ -29,8 +28,6 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
-
-zplug load
 
 PATH=/usr/local/bin:$PATH
 
@@ -42,6 +39,9 @@ alias gp="git pull"
 alias gd="git diff --color | diff-so-fancy | less --tabs=2 -RFX"
 alias zshconfig="subl ~/.zshrc"
 alias bos="bunyan -o short"
+
+# editor
+export EDITOR=vim
 
 # rupa/z
 . `brew --prefix`/etc/profile.d/z.sh
@@ -58,3 +58,5 @@ turl(){ curl --socks5-hostname localhost:9050 $@ ; }
 export PATH="$HOME/.yarn/bin:$PATH"
 # MMake https://github.com/tj/mmake
 alias make=mmake
+
+zplug load
