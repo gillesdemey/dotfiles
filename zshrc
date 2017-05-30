@@ -8,6 +8,7 @@ zplug "lib/key-bindings",    from:oh-my-zsh
 zplug "plugins/docker",      from:oh-my-zsh
 zplug "plugins/grunt",       from:oh-my-zsh, nice:10
 zplug "plugins/npm",         from:oh-my-zsh, nice:10
+zplug "lukechilds/zsh-nvm"
 
 # theme
 # zplug "dracula/zsh", use:dracula.zsh-theme
