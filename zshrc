@@ -10,16 +10,21 @@ zplug "plugins/grunt",       from:oh-my-zsh, nice:10
 zplug "plugins/npm",         from:oh-my-zsh, nice:10
 
 # theme
-zplug "dracula/zsh", use:dracula.zsh-theme
+# zplug "dracula/zsh", use:dracula.zsh-theme
+# zplug "sindresorhus/pure", as:theme, use:"*.zsh"
+zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+
+SPACESHIP_PROMPT_SYMBOL=❯
+# SPACESHIP_TIME_SHOW=true
 
 # plugins
 zplug "tcnksm/docker-alias", use:zshrc
 zplug "tj/n",                hook-build:"make install"
 zplug "andrewferrier/fzf-z"
 zplug "felixr/docker-zsh-completion"
-zplug "psprint/history-search-multi-word"
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "psprint/history-search-multi-word"
+# zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 # check for missing plugins and prompt to intall
 if ! zplug check --verbose; then
@@ -28,8 +33,6 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
-
-zplug load
 
 PATH=/usr/local/bin:$PATH
 
@@ -52,3 +55,6 @@ eval "$(direnv hook zsh)"
 
 # curl — but through a TOR SOCKS proxy
 turl(){ curl --socks5-hostname localhost:9050 $@ ; }
+
+zplug load
+
